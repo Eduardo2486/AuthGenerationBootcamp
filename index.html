@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="./js.js"></script>
+
+  <script>
+    if(!isLoggedIn()){
+      let url = `${window.location.origin}/auth-web-page/login.html`; 
+      window.location.replace(url);
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <!-- <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li> -->
+      </ul>
+
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-2" id="logout">Logout</button>
+      </div>
+    </header>
+  </div>
+
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="imagesContainer">
+       
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('logout').addEventListener('click', (e) => logOut() ); 
+    showImages();
+  </script>
+</body>
+</html>
